@@ -5,3 +5,6 @@
 
 brain-even game demo:
 https://asciinema.org/a/iX8ZvxHJjJCgckHXhYzrkF367
+
+brain-calc game demo:
+https://asciinema.org/a/o1uMtK0mKXMrEzKkFLqWAjrWR
