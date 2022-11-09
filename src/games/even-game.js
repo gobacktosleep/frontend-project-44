@@ -1,6 +1,5 @@
 import startGame from '../index.js';
-
-const getRandomNumber = (min = 0, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
+import getRandomNumber from '../randomizerModule.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
