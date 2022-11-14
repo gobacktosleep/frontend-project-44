@@ -16,14 +16,14 @@ This app contains five math mini-games that run from the console. Each game cont
 - **Prime number.** Given a random number and you have to answer "yes" if the number is prime, or "no" if it is not. 
 
 ### Install the app:
-Sequentially type these commands in your terminal
+Sequentially type these commands in your Terminal
 ```
 $ git clone https://github.com/gobacktosleep/frontend-project-44
 $ cd frontend-project-44
 $ make install
-$ sudo npm link
+$ make link
 ```
-[Installation example (asciinema)](https://asciinema.org/a/5Wfr8wGzyUtKEeJECvbH6g0NC)
+[Installation example (asciinema)](https://asciinema.org/a/SYOJmtItWGZZbRZ87YkGBb4Kc)
 
 After installation you can start using the app. 
 Each game is launched with a specific command: 
