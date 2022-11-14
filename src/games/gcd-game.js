@@ -3,25 +3,25 @@ import getRandomNumber from '../randomizerModule.js';
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-const gcdFn = (num1, num2) => {
+const getGcd = (num1, num2) => {
   if (num2 === 0) {
     return num1;
   }
-  return gcdFn(num2, num1 % num2);
+  return getGcd(num2, num1 % num2);
 };
 
-const startRound = () => {
+const generateData = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
 
   const questionOfRound = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = gcdFn(firstNumber, secondNumber).toString();
+  const correctAnswer = getGcd(firstNumber, secondNumber).toString();
 
   return [questionOfRound, correctAnswer];
 };
 
-const gcdGame = () => {
-  startGame(gameDescription, startRound);
+const startGcdGame = () => {
+  startGame(gameDescription, generateData);
 };
 
-export default gcdGame;
+export default startGcdGame;

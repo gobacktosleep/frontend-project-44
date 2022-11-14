@@ -4,6 +4,10 @@ import getRandomNumber from '../randomizerModule.js';
 const gameDescription = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
+const firstOperandMin = 0;
+const firstOperandMax = 20;
+const secondOperandMin = 0;
+const secondOperandMax = 10;
 
 const calculate = (firstOperand, operator, secondOperand) => {
   switch (operator) {
@@ -14,13 +18,13 @@ const calculate = (firstOperand, operator, secondOperand) => {
     case '*':
       return firstOperand * secondOperand;
     default:
-      return 'Error';
+      throw new Error('Error');
   }
 };
 
-const startRound = () => {
-  const firstNumber = getRandomNumber(0, 20);
-  const secondNumber = getRandomNumber(0, 10);
+const generateData = () => {
+  const firstNumber = getRandomNumber(firstOperandMin, firstOperandMax);
+  const secondNumber = getRandomNumber(secondOperandMin, secondOperandMax);
 
   const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
 
@@ -30,8 +34,8 @@ const startRound = () => {
   return [questionOfRound, correctAnswer];
 };
 
-const calcGame = () => {
-  startGame(gameDescription, startRound);
+const startCalcGame = () => {
+  startGame(gameDescription, generateData);
 };
 
-export default calcGame;
+export default startCalcGame;

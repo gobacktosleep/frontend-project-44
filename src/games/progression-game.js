@@ -2,6 +2,9 @@ import startGame from '../index.js';
 import getRandomNumber from '../randomizerModule.js';
 
 const gameDescription = 'What number is missing in the progression?';
+const progLength = 10;
+const progStepMin = 2;
+const progStepMax = 10;
 
 const getProgression = (start, step, length) => {
   const progression = [];
@@ -12,10 +15,9 @@ const getProgression = (start, step, length) => {
   return progression;
 };
 
-const startRound = () => {
+const generateData = () => {
   const progStart = getRandomNumber();
-  const progStep = getRandomNumber(2, 10);
-  const progLength = 10;
+  const progStep = getRandomNumber(progStepMin, progStepMax);
   const progression = getProgression(progStart, progStep, progLength);
   const hiddenNumber = getRandomNumber(0, progression.length - 2);
   const correctAnswer = progression[hiddenNumber].toString();
@@ -25,8 +27,8 @@ const startRound = () => {
   return [questionOfRound, correctAnswer];
 };
 
-const progressionGame = () => {
-  startGame(gameDescription, startRound);
+const startProgressionGame = () => {
+  startGame(gameDescription, generateData);
 };
 
-export default progressionGame;
+export default startProgressionGame;

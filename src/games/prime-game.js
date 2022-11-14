@@ -12,15 +12,15 @@ const isPrime = (number) => {
   return number > 1;
 };
 
-const startRound = () => {
+const generateData = () => {
   const randomNumber = getRandomNumber();
   const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
 
   return [randomNumber, correctAnswer];
 };
 
-const primeGame = () => {
-  startGame(gameDescription, startRound);
+const startPrimeGame = () => {
+  startGame(gameDescription, generateData);
 };
 
-export default primeGame;
+export default startPrimeGame;
